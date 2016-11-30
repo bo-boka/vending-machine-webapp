@@ -1,0 +1,7 @@
+1. put admin page as a settings button
+2. stats page
+3. change in coins
+4. numbers validation -- @Range
+5. be able to enter decimals in amount
+6. check database first before transaction
+7. TESTS
