@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.tsguild.vendingmachinewebapp.dao.VendingDaoJdbcImplTest
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 1, Errors: 5, Skipped: 0, Time elapsed: 0.1 sec <<< FAILURE!
-testAddItem(com.tsguild.vendingmachinewebapp.dao.VendingDaoJdbcImplTest)  Time elapsed: 0.023 sec  <<< ERROR!
+Tests run: 6, Failures: 1, Errors: 5, Skipped: 0, Time elapsed: 0.498 sec <<< FAILURE!
+testAddItem(com.tsguild.vendingmachinewebapp.dao.VendingDaoJdbcImplTest)  Time elapsed: 0.125 sec  <<< ERROR!
 java.lang.NullPointerException
 	at com.tsguild.vendingmachinewebapp.dao.VendingDaoJdbcImpl.addItem(VendingDaoJdbcImpl.java:38)
 	at com.tsguild.vendingmachinewebapp.dao.VendingDaoJdbcImplTest.testAddItem(VendingDaoJdbcImplTest.java:65)
@@ -40,7 +40,7 @@ java.lang.NullPointerException
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-testGetAllItems(com.tsguild.vendingmachinewebapp.dao.VendingDaoJdbcImplTest)  Time elapsed: 0.004 sec  <<< ERROR!
+testGetAllItems(com.tsguild.vendingmachinewebapp.dao.VendingDaoJdbcImplTest)  Time elapsed: 0.107 sec  <<< ERROR!
 java.lang.NullPointerException
 	at com.tsguild.vendingmachinewebapp.dao.VendingDaoJdbcImpl.getAllItems(VendingDaoJdbcImpl.java:53)
 	at com.tsguild.vendingmachinewebapp.dao.VendingDaoJdbcImplTest.testGetAllItems(VendingDaoJdbcImplTest.java:79)
@@ -116,7 +116,7 @@ java.lang.NullPointerException
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-testGetItem(com.tsguild.vendingmachinewebapp.dao.VendingDaoJdbcImplTest)  Time elapsed: 0.002 sec  <<< ERROR!
+testGetItem(com.tsguild.vendingmachinewebapp.dao.VendingDaoJdbcImplTest)  Time elapsed: 0 sec  <<< ERROR!
 java.lang.NullPointerException
 	at com.tsguild.vendingmachinewebapp.dao.VendingDaoJdbcImpl.getItem(VendingDaoJdbcImpl.java:63)
 	at com.tsguild.vendingmachinewebapp.dao.VendingDaoJdbcImplTest.testGetItem(VendingDaoJdbcImplTest.java:94)
@@ -154,7 +154,7 @@ java.lang.NullPointerException
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-testRemoveItem(com.tsguild.vendingmachinewebapp.dao.VendingDaoJdbcImplTest)  Time elapsed: 0.002 sec  <<< ERROR!
+testRemoveItem(com.tsguild.vendingmachinewebapp.dao.VendingDaoJdbcImplTest)  Time elapsed: 0.006 sec  <<< ERROR!
 java.lang.NullPointerException
 	at com.tsguild.vendingmachinewebapp.dao.VendingDaoJdbcImpl.removeItem(VendingDaoJdbcImpl.java:73)
 	at com.tsguild.vendingmachinewebapp.dao.VendingDaoJdbcImplTest.testRemoveItem(VendingDaoJdbcImplTest.java:108)
@@ -192,7 +192,7 @@ java.lang.NullPointerException
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-testSetJdbcTemplate(com.tsguild.vendingmachinewebapp.dao.VendingDaoJdbcImplTest)  Time elapsed: 0.002 sec  <<< FAILURE!
+testSetJdbcTemplate(com.tsguild.vendingmachinewebapp.dao.VendingDaoJdbcImplTest)  Time elapsed: 0.001 sec  <<< FAILURE!
 java.lang.AssertionError: The test case is a prototype.
 	at org.junit.Assert.fail(Assert.java:88)
 	at com.tsguild.vendingmachinewebapp.dao.VendingDaoJdbcImplTest.testSetJdbcTemplate(VendingDaoJdbcImplTest.java:53)

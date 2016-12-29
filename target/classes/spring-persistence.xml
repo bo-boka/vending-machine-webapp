@@ -24,7 +24,7 @@
         <!-- value="jdbc:mysql://localhost:3306/StudentRoster_test" /> -->
         <property name="url" value="jdbc:mysql://localhost:3306/VendingMachine" />
         <property name="username" value="root" />
-        <property name="password" value="apprentice" />
+        <property name="password" value="3640giggitY!" />
         <!--define basics of the connection pool-->
         <property name="initialSize" value="5" />
         <property name="maxTotal" value="20" />
