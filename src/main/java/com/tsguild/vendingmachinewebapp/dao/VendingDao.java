@@ -7,6 +7,8 @@ package com.tsguild.vendingmachinewebapp.dao;
 
 import com.tsguild.vendingmachinewebapp.dto.Item;
 import java.util.List;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  *
@@ -14,6 +16,7 @@ import java.util.List;
  */
 public interface VendingDao {
 
+    @Transactional(propagation = Propagation.REQUIRED, readOnly = false)
     Item addItem(Item item);
 
     List<Item> getAllItems();
