@@ -24,9 +24,14 @@ public class AdminController {
     }
     
     @RequestMapping(value={"/admin"}, method=RequestMethod.GET)
-    public String displayStats() { //Map<String, Object> model
-//        model.put("message", "Hello from the controller" );
+    public String displayStats() { 
         return "admin";
+    }
+    
+    //login page
+    @RequestMapping(value = "/login", method=RequestMethod.GET)
+    public String displayLoginPage(){
+        return "loginPage";
     }
     
     @ResponseBody

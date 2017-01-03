@@ -24,8 +24,7 @@ public class HomeController {
     }
     
     @RequestMapping(value={"/","/home"}, method=RequestMethod.GET)
-    public String displayHome() { //Map<String, Object> model
-//        model.put("message", "Hello from the controller" );
+    public String displayHome() { 
         return "home";
     }
     
@@ -34,8 +33,5 @@ public class HomeController {
     public List<Item> getAllItems(){
         return dao.getAllItems();
     }
-    
-    
-    
-    
+
 }

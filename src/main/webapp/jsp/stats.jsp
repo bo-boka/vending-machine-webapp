@@ -18,15 +18,7 @@
     </head>
     <body>
         <div class="container">
-            <h1>Vending Machine Web App</h1>
-            <hr/>
-            <div class="navbar">
-                <ul class="nav nav-tabs">
-                    <li role="presentation"><a href="${pageContext.request.contextPath}/home">Home</a></li>
-                    <li role="presentation" class="active"><a href="${pageContext.request.contextPath}/stats">Stats</a></li>
-                    <li role="presentation"><a href="${pageContext.request.contextPath}/admin">Admin</a></li>
-                </ul>    
-            </div>
+            <%@include file="headerFragment.jsp" %>
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
