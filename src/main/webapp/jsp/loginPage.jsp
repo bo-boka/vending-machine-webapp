@@ -1,21 +1,22 @@
-<%-- 
-    Document   : loginPage
-    Created on : Dec 8, 2016, 10:31:00 PM
-    Author     : apprentice
---%>
+
 <%@ taglib prefix="s" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
+        <link href="${pageContext.request.contextPath}/css/VendingCSS.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan" rel="stylesheet">
+        <link rel="shortcut icon" href="${pageContext.request.contextPath}/img/icon.png">
         <title>Login Page</title>
     </head>
     <body>
-        <div>
+        <div class="container">
             <%@include file="headerFragment.jsp" %>
-            <h2>Please Login To Make Administrative Changes:</h2>
+            <h4>Please Login To Make Administrative Changes:</h4>
             <c:if test="${param.login_error == 1}">
                 <h3>Wrong id or password!</h3>
             </c:if> 

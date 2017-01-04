@@ -21,8 +21,8 @@ function drawChart() {
             title: 'Item Inventory',
             vAxis: {title: 'Item', titleTextStyle: {color: 'red'}},
             hAxis: {title: 'Num in Stock', titleTextStyle: {color: 'red'}},
-            'width': 500,
-            'height': 400
+            'width': 600,
+            'height': 500
         };
 
         var chart = new google.visualization.BarChart(document.getElementById('invChart'));

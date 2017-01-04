@@ -6,12 +6,11 @@
 <html>
     <head>
         <title>Home Page</title>
-        <!-- Bootstrap core CSS -->
+        
         <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
-
-        <!-- SWC Icon -->
         <link rel="shortcut icon" href="${pageContext.request.contextPath}/img/icon.png">
         <link href="css/VendingCSS.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan" rel="stylesheet">
         <style>
 
         </style>
@@ -31,9 +30,12 @@
                             </div>
                             <div class="col-sm-5">
                                 <h3>Insert Some</h3>
-                                Amount: <input type="number" id="amount" placeholder="$"/><br>
+                                
                                 <div class="formatDiv">
-                                    <strong>Change:</strong> $ <span id="changeBack"></span>
+                                    Enter Amount: <input type="number" id="amount" placeholder="$"/>
+                                    <br><br>
+                                    <strong>Change:</strong> 
+                                    <br><div style="background-color: white;">$  <span id="changeBack"></span></div>
                                 </div>
                             </div>
                         </div>

@@ -6,12 +6,12 @@
 <html>
     <head>
         <title>Stats</title>
-        <!-- Bootstrap core CSS -->
-        <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
 
-        <!-- SWC Icon -->
+        <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
+        
         <link rel="shortcut icon" href="${pageContext.request.contextPath}/img/icon.png">
         <link href="css/VendingCSS.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan" rel="stylesheet">
         <style>
 
         </style>

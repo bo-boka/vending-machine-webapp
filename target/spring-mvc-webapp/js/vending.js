@@ -190,7 +190,7 @@ function addItem(){
 }
 
 function deleteItem(id){
-    var answer = confirm("Do you really want to delete this contact?");
+    var answer = confirm("Do you really want to delete this item?");
  
     if (answer === true) {
         $.ajax({
