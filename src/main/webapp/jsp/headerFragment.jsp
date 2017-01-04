@@ -8,7 +8,7 @@
 <div class="navbar">
     <ul class="nav nav-tabs">
         <li role="presentation" class="${pageContext.request.requestURI eq '/BlogCapstone/jsp/home.jsp' ? ' active' : ''}"><a class="menu" href="${pageContext.request.contextPath}/home">Home</a></li>
-        <li role="presentation" class="${pageContext.request.requestURI eq '/BlogCapstone/jsp/home.jsp' ? ' active' : ''}"><a class="menu" href="${pageContext.request.contextPath}/stats">Stats</a></li>
+        <li role="presentation" class="${pageContext.request.requestURI eq '/BlogCapstone/jsp/stats.jsp' ? ' active' : ''}"><a class="menu" href="${pageContext.request.contextPath}/stats">Stats</a></li>
         <sec:authorize access="isFullyAuthenticated()">
             <li role="presentation" class="${pageContext.request.requestURI eq '/BlogCapstone/jsp/admin.jsp' ? ' active' : ''}"><a class="menu" href="${pageContext.request.contextPath}/admin">Admin</a></li>
         </sec:authorize>

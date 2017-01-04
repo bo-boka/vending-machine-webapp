@@ -5,7 +5,7 @@
  */
 package com.tsguild.vendingmachinewebapp.dao;
 
-import com.tsguild.vendingmachinewebapp.dto.Item;
+import com.tsguild.vendingmachinewebapp.model.Item;
 import java.util.List;
 import junit.framework.Assert;
 import org.junit.After;
@@ -24,7 +24,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
  */
 public class VendingDaoJdbcImplTest {
     
-    VendingDaoJdbcImpl instance;
+    VendingDao instance;
     
     public VendingDaoJdbcImplTest() {
     }
@@ -41,7 +41,7 @@ public class VendingDaoJdbcImplTest {
     public void setUp() {
         
         ApplicationContext factory = new ClassPathXmlApplicationContext("test-applicationContext.xml");
-        instance = factory.getBean("vendingJdbcDao", VendingDaoJdbcImpl.class);
+        instance = factory.getBean("vendingJdbcDao", VendingDao.class);
         JdbcTemplate cleaner = factory.getBean("jdbcTemplateBean", JdbcTemplate.class);
         cleaner.execute("DELETE FROM items WHERE 1=1");
         

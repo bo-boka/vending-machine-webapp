@@ -5,8 +5,8 @@
  */
 package com.tsguild.vendingmachinewebapp.dao;
 
-
-import com.tsguild.vendingmachinewebapp.dto.Item;
+import com.tsguild.vendingmachinewebapp.model.Item;
+import com.tsguild.vendingmachinewebapp.model.ItemCount;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -18,9 +18,10 @@ import java.util.List;
  */
 public class VendingDaoImpl implements VendingDao {
 
-    private HashMap<Integer, Item> items = new HashMap<>();;
+    private HashMap<Integer, Item> items = new HashMap<>();
+    ;
     private static int counter = 0;
-    
+
     @Override
     public List<Item> getAllItems() {
         Collection<Item> i = items.values();
@@ -44,10 +45,15 @@ public class VendingDaoImpl implements VendingDao {
     public Item getItem(int id) {
         return items.get(id);
     }
-    
+
     @Override
-    public void updateItem(Item item){
+    public void updateItem(Item item) {
         items.put(item.getId(), item);
+    }
+
+    @Override
+    public List<ItemCount> getItemCounts() {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
 }

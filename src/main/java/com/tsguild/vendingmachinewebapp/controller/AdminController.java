@@ -1,7 +1,7 @@
 package com.tsguild.vendingmachinewebapp.controller;
 
 import com.tsguild.vendingmachinewebapp.dao.VendingDao;
-import com.tsguild.vendingmachinewebapp.dto.Item;
+import com.tsguild.vendingmachinewebapp.model.Item;
 import javax.inject.Inject;
 import javax.validation.Valid;
 import org.springframework.http.HttpStatus;

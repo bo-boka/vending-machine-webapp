@@ -20,8 +20,8 @@
     <bean id="dataSourceBean" class="org.apache.commons.dbcp2.BasicDataSource">
         <!--describes what kind of db your connecting to-->
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <!-- test-applicationContext.xml should point to StudentRoster_test -->
-        <!-- value="jdbc:mysql://localhost:3306/StudentRoster_test" /> -->
+        <!-- test-applicationContext.xml should point to test -->
+        <!-- value="jdbc:mysql://localhost:3306/database_name" /> -->
         <property name="url" value="jdbc:mysql://localhost:3306/VendingMachine" />
         <property name="username" value="root" />
         <property name="password" value="3640giggitY!" />

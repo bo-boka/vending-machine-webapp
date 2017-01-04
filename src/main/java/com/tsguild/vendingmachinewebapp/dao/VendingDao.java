@@ -5,7 +5,8 @@
  */
 package com.tsguild.vendingmachinewebapp.dao;
 
-import com.tsguild.vendingmachinewebapp.dto.Item;
+import com.tsguild.vendingmachinewebapp.model.Item;
+import com.tsguild.vendingmachinewebapp.model.ItemCount;
 import java.util.List;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -26,5 +27,7 @@ public interface VendingDao {
     void removeItem(int id);
 
     void updateItem(Item item);
+    
+    List<ItemCount> getItemCounts();
     
 }
