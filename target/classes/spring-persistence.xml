@@ -17,17 +17,34 @@
     
     <tx:annotation-driven />
     
-    <bean id="dataSourceBean" class="org.apache.commons.dbcp2.BasicDataSource">
-        <!--describes what kind of db your connecting to-->
+    
+<!--    <bean id="dataSourceBean" class="org.apache.commons.dbcp2.BasicDataSource">
+        describes what kind of db your connecting to
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <!-- test-applicationContext.xml should point to test -->
-        <!-- value="jdbc:mysql://localhost:3306/database_name" /> -->
+         test-applicationContext.xml should point to test 
+         value="jdbc:mysql://localhost:3306/database_name" /> 
         <property name="url" value="jdbc:mysql://localhost:3306/VendingMachine" />
         <property name="username" value="root" />
         <property name="password" value="3640giggitY!" />
-        <!--define basics of the connection pool-->
+        define basics of the connection pool
         <property name="initialSize" value="5" />
         <property name="maxTotal" value="20" />
+    </bean>-->
+    
+    <bean class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close" id="dataSource">
+        <property name="driverClassName" value="${database.driverClassName}"/>
+        <property name="url" value="#{ 'jdbc:postgresql://' + @dbUrl.getHost() + ':' + @dbUrl.getPort() + @dbUrl.getPath() }"/>
+        <property name="username" value="#{ @dbUrl.getUserInfo().split(':')[0] }"/>
+        <property name="password" value="#{ @dbUrl.getUserInfo().split(':')[1] }"/>
+        <property name="maxActive" value="10"/>
+        <property name="maxIdle" value="5"/>
+        <property name="minIdle" value="2"/>
+        <property name="initialSize" value="5"/>
+        <property name="removeAbandoned" value="true"/>
+    </bean>
+    
+    <bean class="java.net.URI" id="dbUrl">
+        <constructor-arg value="${DATABASE_URL}"/>
     </bean>
     
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
