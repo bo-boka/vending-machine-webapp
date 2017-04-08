@@ -46,7 +46,7 @@
             <!-- the user's credentials (get the password from the users -->
             <!-- tables and get the roles from the authorities table) -->
             <jdbc-user-service id="userService"
-                               data-source-ref="dataSourceBean"
+                               data-source-ref="dataSource"
                                users-by-username-query="select username, password, enabled from users where username=?"
                                authorities-by-username-query="select username, authority from authorities where username=?" />
         </authentication-provider>
