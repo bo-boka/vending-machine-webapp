@@ -1,22 +1,17 @@
 body {
-	background-color: #9fe2bf;
+    background-color: #9fe2bf;
 }
 
 .vendOuter {
     background-color: #808080;
     border: 10px solid black;
     padding: 20px;
-    margin-left: 150px;
-    margin-right: 150px;
+    width: 900px;
 }
 
-.vendInner {
-    background-color: #ffffff;
-}
-
-.formatDiv {
+.moneyDiv {
     padding: 20px 10px; 
-    margin: 15px 35px;
+    width: 200px;
     background-color: silver;
 }
 
@@ -28,14 +23,15 @@ span.glyphicon {
     font-size: 1.5em;
 }
 
-td button {
-    width: 100%;
-    height: 100%;
-    
+.item {
+    margin: 13px 0px;
+     width: 120px; 
+     height: 100px;
 }
 
-td {
-    padding: 7px;
+button {
+    width: 100%;
+    height: 100%;
 }
 
 h1 {

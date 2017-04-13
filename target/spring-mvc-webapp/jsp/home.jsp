@@ -21,25 +21,21 @@
             <%@include file="headerFragment.jsp" %>
             
             <div class="container">
-                <div class="vendOuter">
-                    <form>
-                        <div class="row">
-                            <div class="col-sm-7">
-                                <h3>Get Some</h3>
-                                <%@include file="vendingTableFragment.jsp" %>
-                            </div>
-                            <div class="col-sm-5">
-                                <h3>Insert Some</h3>
-                                
-                                <div class="formatDiv">
-                                    Enter Amount: <input type="number" id="amount" placeholder="$"/>
-                                    <br><br>
-                                    <strong>Change:</strong> 
-                                    <br><div style="background-color: white;">$  <span id="changeBack"></span></div>
-                                </div>
-                            </div>
+                <div class="row vendOuter">
+                    <div class="col-lg-7 col-md-7 col-sm-12">
+                        <h3>Get Some</h3>
+                        <div id="itemRows"></div>
+                    </div>
+                    <div class="col-lg-5 col-md-5 col-sm-12">
+                        <h3>Insert Some</h3>
+
+                        <div class="moneyDiv">
+                            Enter Amount: <input type="number" id="amount" placeholder="$"/>
+                            <br><br>
+                            <strong>Change:</strong> 
+                            <br><div style="background-color: white;">$  <span id="changeBack"></span></div>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>

@@ -38,10 +38,10 @@ function processItemMachine(items){
     $('#itemRows').empty();
 
     var itemRows = $('#itemRows');
-    var itemRow = $("<tr>");
+    var itemRow = $("<div class='row'>");
     $.each(items, function(index, item){
         
-        var nameField = $("<td>");
+        var nameField = $("<div class='col-sm-3 col-xs-3 col-md-3 col-lg-3 item'>");
         
         var nameButton = $("<button>");
         
@@ -52,7 +52,7 @@ function processItemMachine(items){
         nameField.append(nameButton);
         
         if (index % 4 === 0){ //creates rows of 4 items
-            itemRow = $("<tr>");
+            itemRow = $("<div class='row'>");
         }
         
         itemRow.append(nameField);

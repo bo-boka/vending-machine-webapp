@@ -1,0 +1,17 @@
+branch-defaults:
+  master:
+    environment: vending-env
+    group_suffix: null
+global:
+  application_name: vending-machine-webapp
+  branch: null
+  default_ec2_keyname: null
+  default_platform: Tomcat 8 Java 8
+  default_region: us-east-1
+  instance_profile: null
+  platform_name: null
+  platform_version: null
+  profile: eb-cli
+  repository: null
+  sc: git
+  workspace_type: Application
