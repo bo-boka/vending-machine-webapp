@@ -12,6 +12,7 @@
         <link rel="shortcut icon" href="${pageContext.request.contextPath}/img/icon.png">
         <link href="css/VendingCSS.css" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
         <style>
 
         </style>

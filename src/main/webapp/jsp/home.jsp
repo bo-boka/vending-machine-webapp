@@ -3,17 +3,16 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp">
     <head>
-        <title>Home Page</title>
+        <title>Vending Machine</title>
         
         <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
         <link rel="shortcut icon" href="${pageContext.request.contextPath}/img/icon.png">
         <link href="css/VendingCSS.css" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan" rel="stylesheet">
-        <style>
-
-        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script src="https://code.angularjs.org/latest/angular-messages.min.js"></script>
     </head>
     <body>
     <center>
@@ -34,6 +33,9 @@
                             <br><br>
                             <strong>Change:</strong> 
                             <br><div style="background-color: white;">$  <span id="changeBack"></span></div>
+                        </div>
+                        <div ng-controller="mainController">
+                            <h4>something for now</h4>
                         </div>
                     </div>
                 </div>

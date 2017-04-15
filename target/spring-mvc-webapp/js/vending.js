@@ -1,3 +1,33 @@
+/*global angular*/
+
+var app = angular.module('myApp', ['ngMessages']);
+
+app.controller('mainController', function($scope, $log, $filter){
+    
+    console.log($scope);
+    $log.log('log stuff');
+    $log.info('some info');
+    $log.warn("here's a warning");
+    $log.debug("stuff to debug");
+    $log.error("error stuff");
+    
+    $scope.name = 'Jane Doe';
+    $scope.formattedname = $filter('uppercase')($scope.name);
+    $log.info($scope.name);
+    $log.info($scope.formattedname);
+    
+});
+
+//playing with angularJS========================
+var searchPeople = function(name, $scope, age, birthday){
+    return 'Jane Doe';
+};
+console.log(searchPeople()); //returns 'Jane Doe'
+console.log(searchPeople); //returns entire function
+console.log(searchPeople.toString()); //returns String of entire function
+
+console.log(angular.injector().annotate(searchPeople)); //parts the string and creates an array of each parameter
+//===============================================
 
 $(document).ready(function(){
     
