@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Stats</title>
+        <title>ElectroVend</title>
 
         <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
         

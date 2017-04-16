@@ -11,7 +11,7 @@
         <link href="${pageContext.request.contextPath}/css/VendingCSS.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan" rel="stylesheet">
         <link rel="shortcut icon" href="${pageContext.request.contextPath}/img/icon.png">
-        <title>Login Page</title>
+        <title>ElectroVend</title>
     </head>
     <body>
         <div class="container">

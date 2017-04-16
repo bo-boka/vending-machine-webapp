@@ -1,8 +1,10 @@
 /*global angular*/
 
-var app = angular.module('myApp', ['ngMessages']);
+var app = angular.module('myApp', ['ngMessages', 'ngResource']);
 
-app.controller('mainController', function($scope, $log, $filter){
+app.controller('mainController', ['$scope', '$log', '$filter', function($scope,$log, $filter){
+                                    //using array form of dependency injection to avoid losing
+                                    //variable names during minification
     
     console.log($scope);
     $log.log('log stuff');
@@ -16,7 +18,7 @@ app.controller('mainController', function($scope, $log, $filter){
     $log.info($scope.name);
     $log.info($scope.formattedname);
     
-});
+}]);
 
 //playing with angularJS========================
 var searchPeople = function(name, $scope, age, birthday){
@@ -68,10 +70,10 @@ function processItemMachine(items){
     $('#itemRows').empty();
 
     var itemRows = $('#itemRows');
-    var itemRow = $("<div class='row'>");
+    var itemRow = $("<div class='row clearfix'>");
     $.each(items, function(index, item){
         
-        var nameField = $("<div class='col-sm-3 col-xs-3 col-md-3 col-lg-3 item'>");
+        var nameField = $("<div class=' col-xs-3 col-sm-3 col-md-3 col-lg-3 clearfix item'>");
         
         var nameButton = $("<button>");
         
@@ -248,7 +250,7 @@ function purchaseItem(id){
         var amount = $("#amount").val();
         var sum = amount - itemCost;
         document.getElementById("changeBack").innerHTML = sum.toFixed(2);
-        
+        $("#vendItem").show();
         var itemInv = item.inventory - 1;
         
         $.ajax({

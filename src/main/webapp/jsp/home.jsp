@@ -1,11 +1,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="s" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html ng-app="myApp">
     <head>
-        <title>Vending Machine</title>
+        <title>ElectroVend</title>
         
         <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
         <link rel="shortcut icon" href="${pageContext.request.contextPath}/img/icon.png">
@@ -13,21 +14,32 @@
         <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
         <script src="https://code.angularjs.org/latest/angular-messages.min.js"></script>
+        <script src="https://code.angularjs.org/latest/angular-resource.min.js"></script>
     </head>
     <body>
     <center>
         <div class="container">
-            <%@include file="headerFragment.jsp" %>
             
             <div class="container">
+                <sec:authorize access="isFullyAuthenticated()">
+                    <div role="presentation" class="pull-right"><a href="${pageContext.request.contextPath}/j_spring_security_logout">Log Out</a></div> 
+                </sec:authorize>
                 <div class="row vendOuter">
+                    
+                    <sec:authorize access="!isFullyAuthenticated()">
+                        <div role="presentation" class="pull-right"><a href="${pageContext.request.contextPath}/login"><span class="glyphicon glyphicon-cog" style="color: white;"></span></a></div>
+                    </sec:authorize>
+                    <sec:authorize access="isFullyAuthenticated()">
+                        <div role="presentation" class="pull-right"><a class="menu" href="${pageContext.request.contextPath}/admin"><span class="glyphicon glyphicon-cog" style="color: white;"></span></a></div>
+                    </sec:authorize>
+                    <div role="presentation" class="pull-right"><a class="menu" href="${pageContext.request.contextPath}/stats" style="color: white;">Stats |&nbsp;</a></div>
+                    <div class="col-sm-12">
+                        <marquee scrollamount="15">ELECTROVEND</marquee>
+                    </div>
                     <div class="col-lg-7 col-md-7 col-sm-12">
-                        <h3>Get Some</h3>
                         <div id="itemRows"></div>
                     </div>
                     <div class="col-lg-5 col-md-5 col-sm-12">
-                        <h3>Insert Some</h3>
-
                         <div class="moneyDiv">
                             Enter Amount: <input type="number" id="amount" placeholder="$"/>
                             <br><br>
@@ -35,7 +47,9 @@
                             <br><div style="background-color: white;">$  <span id="changeBack"></span></div>
                         </div>
                         <div ng-controller="mainController">
-                            <h4>something for now</h4>
+                            <div id="vendItem" style="display: none;">
+                                <img src="http://fixmybrokenmac.co.uk/wp-content/uploads/2017/03/iphone-6GREY.png" height="300" width="260"/>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html ng-app="myApp">
     <head>
-        <title>Home Page</title>
+        <title>ElectroVend</title>
         <!-- Bootstrap core CSS -->
         <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
 
@@ -15,11 +15,12 @@
         <link href="css/VendingCSS.css" rel="stylesheet" type="text/css">
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
         <script src="https://code.angularjs.org/latest/angular-messages.min.js"></script>
+        <script src="https://code.angularjs.org/latest/angular-resource.min.js"></script>
     </head>
     <body>
     <center>
         <div class="container">
-            <%@include file="headerFragment.jsp" %>
+            
             <div class="container">
                 <div class="row">
                     <!--  display table-->
