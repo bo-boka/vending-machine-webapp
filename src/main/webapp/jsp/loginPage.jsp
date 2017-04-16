@@ -16,7 +16,8 @@
     <body>
         <div class="container">
             <%@include file="headerFragment.jsp" %>
-            <h4>Please Login To Make Administrative Changes:</h4>
+            <center>
+                <h4>Please Login To Make Administrative Changes</h4><br>
             <c:if test="${param.login_error == 1}">
                 <h3>Wrong id or password!</h3>
             </c:if> 
@@ -39,6 +40,7 @@
                     </table>
                 </fieldset>
             </form> 
+            </center>
         </div>
 
     </body>

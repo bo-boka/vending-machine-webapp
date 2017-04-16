@@ -20,7 +20,7 @@
     <body>
     <center>
         <div class="container">
-            
+            <%@include file="headerFragment.jsp" %>
             <div class="container">
                 <div class="row">
                     <!--  display table-->
@@ -30,20 +30,6 @@
                     </div>
                     <div  ng-controller="mainController" class="col-md-6">
                         <h2>Add Item</h2>
-                        <!---->
-<!--                        <form name="myForm">
-                            <label>
-                              Enter text:
-                              <input type="email" ng-model="field" name="myField" required maxlength="15" />
-                            </label>
-                            <div ng-messages="myForm.myField.$error" role="alert">
-                              <div ng-message="required">Please enter a value for this field.</div>
-                              <div ng-message="email">This field must be a valid email address.</div>
-                              <div ng-message="maxlength">This field can be at most 15 characters long.</div>
-                            </div>
-                        </form>-->
-                        <!---->
-                        
                         <form class="form-horizontal" role="form" name="myForm">
                             <div class="form-group">
                                 <label for="add-name" class="col-md-4 control-label">Name:</label>
@@ -78,7 +64,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <div class="col-md-8">
+                                <div class="col-sm-offset-4 col-sm-4">
                                     <button type="submit" id="add-button" class="btn btn-default">Add Item</button>
                                 </div>
                             </div>

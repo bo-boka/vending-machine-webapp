@@ -32,14 +32,14 @@
                     <sec:authorize access="isFullyAuthenticated()">
                         <div role="presentation" class="pull-right"><a class="menu" href="${pageContext.request.contextPath}/admin"><span class="glyphicon glyphicon-cog" style="color: white;"></span></a></div>
                     </sec:authorize>
-                    <div role="presentation" class="pull-right"><a class="menu" href="${pageContext.request.contextPath}/stats" style="color: white;">Stats |&nbsp;</a></div>
+                    
                     <div class="col-sm-12">
                         <marquee scrollamount="15">ELECTROVEND</marquee>
                     </div>
                     <div class="col-lg-7 col-md-7 col-sm-12">
                         <div id="itemRows"></div>
                     </div>
-                    <div class="col-lg-5 col-md-5 col-sm-12">
+                    <div class="col-lg-5 col-md-12 col-sm-12">
                         <div class="moneyDiv">
                             Enter Amount: <input type="number" id="amount" placeholder="$"/>
                             <br><br>

@@ -7,7 +7,7 @@ body {
 .vendOuter {
     background-color: #808080;
     border: 10px solid black;
-    padding: 20px;
+    padding: 1%;
     margin: 5%;
     width: 73%;
 }
@@ -23,13 +23,13 @@ marquee {
 }
 
 .moneyDiv {
-    padding: 20px 10px; 
-    width: 200px;
+    padding: 2% 1%; 
+    /*width: 100%;*/
     background-color: silver;
 }
 
-.centered {
-    text-align: center;
+img {
+    margin: 2%;
 }
 
 span.glyphicon {
@@ -37,9 +37,9 @@ span.glyphicon {
 }
 
 .item {
-    /*margin: 7px 0px;*/
-     width: 110px; 
-     height: 80px;
+    padding: 1%;
+    width: 110px; 
+    height: 80px;
 }
 
 button {

@@ -12,20 +12,20 @@ CREATE TABLE IF NOT EXISTS Items(
 );
 
 INSERT INTO `Items` (`id`, `name`, `cost`, `inventory`) 
-			VALUES (1, "Iced Tea", 2.2, 2),
-					(2, "Water", 1.2, 3),
-					(3, "Trail Mix", 3.55, 1),
-					(4, "Licorice", 1.95, 2),
-					(5, "Chips", 1.75, 2),
-					(6, "Crackers", 2.0, 1),
-					(7, "Bag of Nuts", 2.9, 2),
-					(8, "Dried Fruit", 3.25, 3),
-					(9, "Sunflower Seeds", 2.5, 1),
-					(10, "Gronola Bar", 3.15, 2),
-					(11, "Pretzels", 1.65, 2),
-					(12, "Soda", 2.12, 1),
-					(13, "Oreos", 3.88, 4),
-					(14, "Chocolate Bar", 2.5, 3);
+			VALUES (1, "iPhone 22", 999.99, 25),
+					(2, "Hoverpad", 350.20, 31),
+					(3, "Nanobot Vaccine", 55, 886),
+					(4, "Daily News Chip", 9.95, 207),
+					(5, "Weekly Soylent", 19.75, 62),
+					(6, "VR Movie", 14.50, 45),
+					(7, "Mind Cloud Storage", 75.95, 752),
+					(8, "Macintosh AI", 868.25, 3),
+					(9, "Novelgram", 72.5, 796),
+					(10, "Vintage Book", 33.15, 21),
+					(11, "Earbuds", 15.65, 80),
+					(12, "Vintage Earbuds", 32.12, 5),
+					(13, "Translator Earpiece", 63.88, 47),
+					(14, "Chips", 2.5, 23);
 
 --
 -- Table structure for table `users`

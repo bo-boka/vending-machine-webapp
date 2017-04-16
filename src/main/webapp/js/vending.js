@@ -73,7 +73,7 @@ function processItemMachine(items){
     var itemRow = $("<div class='row clearfix'>");
     $.each(items, function(index, item){
         
-        var nameField = $("<div class=' col-xs-3 col-sm-3 col-md-3 col-lg-3 clearfix item'>");
+        var nameField = $("<div class='col-xs-3 col-sm-3 col-md-3 col-lg-3 clearfix item'>");
         
         var nameButton = $("<button>");
         
