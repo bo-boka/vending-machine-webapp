@@ -4,9 +4,9 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html ng-app="myApp">
+<html ng-app="machineApp">
     <head>
-        <title>ElectroVend</title>
+        <title>ELECTROvend</title>
         
         <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
         <link rel="shortcut icon" href="${pageContext.request.contextPath}/img/icon.png">
@@ -24,7 +24,7 @@
                 <sec:authorize access="isFullyAuthenticated()">
                     <div role="presentation" class="pull-right"><a href="${pageContext.request.contextPath}/j_spring_security_logout">Log Out</a></div> 
                 </sec:authorize>
-                <div class="row vendOuter">
+                <div class="row vendOuter" ng-controller="machineController">
                     
                     <sec:authorize access="!isFullyAuthenticated()">
                         <div role="presentation" class="pull-right"><a href="${pageContext.request.contextPath}/login"><span class="glyphicon glyphicon-cog" style="color: white;"></span></a></div>
@@ -34,26 +34,36 @@
                     </sec:authorize>
                     
                     <div class="col-sm-12">
-                        <marquee scrollamount="15">ELECTROVEND</marquee>
+                        <marquee scrollamount="15">ELECTROvend</marquee>
                     </div>
-                    <div class="col-lg-7 col-md-7 col-sm-12">
-                        <div id="itemRows"></div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        
+                        <!--<div id="itemRows"></div>-->
+                        <div class="row clearfix">
+                            <div ng-repeat="item in items">
+                                <div class="col-sm-3 item" ng-click="purchaseItem(item.id)"><button><strong>{{item.name}}</strong><br>\${{item.cost}}</button></div>
+                                
+                            </div>
+                        </div>
+                        
                     </div>
-                    <div class="col-lg-5 col-md-12 col-sm-12">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
                         <div class="moneyDiv">
                             Enter Amount: <input type="number" id="amount" placeholder="$"/>
                             <br><br>
                             <strong>Change:</strong> 
                             <br><div style="background-color: white;">$  <span id="changeBack"></span></div>
                         </div>
-                        <div ng-controller="mainController">
+                        <div>
                             <div id="vendItem" style="display: none;">
+                                <div ng-cloak> {{ item }}</div>
                                 <img src="http://fixmybrokenmac.co.uk/wp-content/uploads/2017/03/iphone-6GREY.png" height="300" width="260"/>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <center><img src='${pageContext.request.contextPath}/img/icon.png'/></center>
         </div>
         <!-- Placed at the end of the document so the pages load faster -->
         <script src="${pageContext.request.contextPath}/js/jquery-2.2.4.min.js"></script>

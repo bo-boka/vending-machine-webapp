@@ -4,7 +4,7 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html ng-app="myApp">
+<html ng-app="adminApp">
     <head>
         <title>ElectroVend</title>
         <!-- Bootstrap core CSS -->
@@ -28,7 +28,7 @@
                         <h2>Item List</h2>
                         <%@include file="itemListTableFragment.jsp" %>
                     </div>
-                    <div  ng-controller="mainController" class="col-md-6">
+                    <div  ng-controller="adminController" class="col-md-6">
                         <h2>Add Item</h2>
                         <form class="form-horizontal" role="form" name="myForm">
                             <div class="form-group">
@@ -80,6 +80,7 @@
         <script src="${pageContext.request.contextPath}/js/jquery-2.2.4.min.js"></script>
         <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
         <script src="${pageContext.request.contextPath}/js/vending.js"></script>
+        <script src="${pageContext.request.contextPath}/js/adminJS.js"></script>
     </center>
 </body>
 </html>
