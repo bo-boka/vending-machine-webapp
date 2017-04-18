@@ -29,8 +29,8 @@
                     </div>
                     
                     <div class="form-group">
-                        <div class="col-md-8">
-                            <button type="submit" id="edit-button" class="btn btn-default" data-dismiss="modal">Edit Item</button>
+                        <div class="col-md-offset-4 col-md-4">
+                            <button type="submit" id="edit-button" class="btn btn-primary" data-dismiss="modal">Edit Item</button>
                         </div>
                     </div>
                 </form>

@@ -52,12 +52,12 @@
                             Enter Amount: <input type="number" id="amount" placeholder="$"/>
                             <br><br>
                             <strong>Change:</strong> 
-                            <br><div style="background-color: white;">$  <span id="changeBack"></span></div>
+                            <br><div style="background-color: white;">  <span id="changeBack">{{ sum | currency }}</span></div>
                         </div>
                         <div>
                             <div id="vendItem" style="display: none;">
-                                <div ng-cloak> {{ item }}</div>
-                                <img src="http://fixmybrokenmac.co.uk/wp-content/uploads/2017/03/iphone-6GREY.png" height="300" width="260"/>
+                                Your purchase: <div ng-cloak> {{ item.name }} </div> Thank you. Come again.
+                                <div ng-bind-html="renderHtml(item.image)"></div>
                             </div>
                         </div>
                     </div>

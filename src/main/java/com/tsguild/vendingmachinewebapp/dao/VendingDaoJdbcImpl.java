@@ -28,8 +28,8 @@ public class VendingDaoJdbcImpl implements VendingDao {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    private static final String SQL_ADD_ITEM = "INSERT INTO Items (`name`, `cost`, `inventory`)\n"
-            + "		VALUES (?, ?, ?)";
+    private static final String SQL_ADD_ITEM = "INSERT INTO Items (`name`, `cost`, `inventory`, `image_url`)\n"
+            + "		VALUES (?, ?, ?, ?)";
 
     @Override
     @Transactional(propagation = Propagation.REQUIRED, readOnly = false)
@@ -37,7 +37,8 @@ public class VendingDaoJdbcImpl implements VendingDao {
         jdbcTemplate.update(SQL_ADD_ITEM,
                 item.getName(),
                 item.getCost(),
-                item.getInventory()
+                item.getInventory(),
+                item.getImage()
         );
 
         int id = jdbcTemplate.queryForObject("SELECT LAST_INSERT_ID()", Integer.class);
@@ -74,7 +75,7 @@ public class VendingDaoJdbcImpl implements VendingDao {
     }
 
     private static final String SQL_UPDATE_ITEM_BY_ID
-            = "UPDATE Items SET name = ?, cost = ?, inventory = ?"
+            = "UPDATE Items SET name = ?, cost = ?, inventory = ?, image_url = ?"
             + "		WHERE id = ?";
 
     @Override
@@ -84,6 +85,7 @@ public class VendingDaoJdbcImpl implements VendingDao {
                 item.getName(),
                 item.getCost(),
                 item.getInventory(),
+                item.getImage(),
                 item.getId());
     }
 
@@ -97,11 +99,13 @@ public class VendingDaoJdbcImpl implements VendingDao {
             String name = rs.getString("name");
             Double cost = rs.getDouble("cost");
             int inventory = rs.getInt("inventory");
+            String image = rs.getString("image_url");
 
             mappedItem.setId(id);
             mappedItem.setName(name);
             mappedItem.setCost(cost);
             mappedItem.setInventory(inventory);
+            mappedItem.setImage(image);
 
             return mappedItem;
         }

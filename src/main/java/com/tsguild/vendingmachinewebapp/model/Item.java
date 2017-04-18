@@ -6,7 +6,6 @@
 package com.tsguild.vendingmachinewebapp.model;
 
 import java.util.Objects;
-import javax.validation.constraints.Min;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -26,13 +25,16 @@ public class Item {
     
     private int inventory;
     
+    private String image;
+    
     public Item(){}
 
-    public Item(int id, String name, double cost, int inventory) {
+    public Item(int id, String name, double cost, int inventory, String image) {
         this.id = id;
         this.name = name;
         this.cost = cost;
         this.inventory = inventory;
+        this.image = image;
     }
 
     public int getId() {
@@ -42,7 +44,7 @@ public class Item {
     public void setId(int id) {
         this.id = id;
     }
-    
+
     public String getName() {
         return name;
     }
@@ -67,13 +69,22 @@ public class Item {
         this.inventory = inventory;
     }
 
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 97 * hash + this.id;
-        hash = 97 * hash + Objects.hashCode(this.name);
-        hash = 97 * hash + (int) (Double.doubleToLongBits(this.cost) ^ (Double.doubleToLongBits(this.cost) >>> 32));
-        hash = 97 * hash + this.inventory;
+        int hash = 7;
+        hash = 83 * hash + this.id;
+        hash = 83 * hash + Objects.hashCode(this.name);
+        hash = 83 * hash + (int) (Double.doubleToLongBits(this.cost) ^ (Double.doubleToLongBits(this.cost) >>> 32));
+        hash = 83 * hash + this.inventory;
+        hash = 83 * hash + Objects.hashCode(this.image);
         return hash;
     }
 
@@ -99,6 +110,9 @@ public class Item {
             return false;
         }
         if (!Objects.equals(this.name, other.name)) {
+            return false;
+        }
+        if (!Objects.equals(this.image, other.image)) {
             return false;
         }
         return true;

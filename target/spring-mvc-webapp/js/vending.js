@@ -2,30 +2,35 @@
 
 var mApp = angular.module('machineApp', ['ngMessages', 'ngResource']);
 
-mApp.controller('machineController', ['$scope', '$log', '$http', '$filter', function($scope, $log, $http, $filter){
+mApp.controller('machineController', ['$scope', '$log', '$http', '$sce', function($scope, $log, $http, $sce){
                                     //using array form of dependency injection to avoid losing
                                     //variable names during minification
     $http.get('items')
             .then(function(response) {
                 $scope.items = response.data;
-                var list = $scope.items;
-                $log.log(list);
-                
+                $log.log($scope.items);
             });
     
     $scope.purchaseItem = function(id){
-        alert(id);
+        
         $http.get('item/' + id)
                 .then(function(response){
                     $scope.item = response.data;
-            //ppp
-                    var itemCost = item.cost;
+                    $log.log($scope.item);
+                    //getting change
+                    var itemCost = $scope.item.cost;
                     var amount = $("#amount").val();
-                    var sum = amount - itemCost;
-                    document.getElementById("changeBack").innerHTML = sum.toFixed(2);
+                    $scope.sum = parseFloat(amount - itemCost);
+                    //showing item picture
+                    $scope.renderHtml = function (htmlCode) {
+                        return $sce.trustAsHtml(htmlCode);
+                    };
+//                    $scope.image = '<img src="http://fixmybrokenmac.co.uk/wp-content/uploads/2017/03/iphone-6GREY.png" height="300" width="260"/>';
                     $("#vendItem").show();
-                    var itemInv = item.inventory - 1;
-                    //ppppppp
+                    //updating inventory and item in database
+                    var itemInv = $scope.item.inventory - 1;
+                    $http.put('item/'+ id, {name : $scope.item.name, cost : $scope.item.cost, inventory : itemInv, image: $scope.item.image});
+                    
                 });
     };
     
@@ -99,44 +104,44 @@ mApp.controller('machineController', ['$scope', '$log', '$http', '$filter', func
 //                });
 
 
-function purchaseItem(id){
-    
-    $.ajax({
-        type: 'GET',
-        url : 'item/' + id,
-        headers: {
-            'Accept': 'application/json'
-        }
-    }).success(function(item){
-        
-        var itemName = item.name;
-        
-        var itemCost = item.cost;
-        var amount = $("#amount").val();
-        var sum = amount - itemCost;
-        document.getElementById("changeBack").innerHTML = sum.toFixed(2);
-        $("#vendItem").show();
-        var itemInv = item.inventory - 1;
-        
-        $.ajax({
-            type: 'PUT',
-            url: 'item/' + id,
-            headers: {
-                'Content-type': 'application/json'
-            },
-            'dataType' : 'json',
-            data : JSON.stringify({
-                name : itemName,
-                cost : itemCost,
-                inventory : itemInv
-            })
-        }).success(function(item){
-            loadItems();
-            $("#amount").val('');
-        });
-    
-    });
-        
-}
+//function purchaseItem(id){
+//    
+//    $.ajax({
+//        type: 'GET',
+//        url : 'item/' + id,
+//        headers: {
+//            'Accept': 'application/json'
+//        }
+//    }).success(function(item){
+//        
+//        var itemName = item.name;
+//        
+//        var itemCost = item.cost;
+//        var amount = $("#amount").val();
+//        var sum = amount - itemCost;
+//        document.getElementById("changeBack").innerHTML = sum.toFixed(2);
+//        $("#vendItem").show();
+//        var itemInv = item.inventory - 1;
+//        
+//        $.ajax({
+//            type: 'PUT',
+//            url: 'item/' + id,
+//            headers: {
+//                'Content-type': 'application/json'
+//            },
+//            'dataType' : 'json',
+//            data : JSON.stringify({
+//                name : itemName,
+//                cost : itemCost,
+//                inventory : itemInv
+//            })
+//        }).success(function(item){
+//            loadItems();
+//            $("#amount").val('');
+//        });
+//    
+//    });
+//        
+//}
 
 
