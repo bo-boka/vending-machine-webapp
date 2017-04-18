@@ -3,7 +3,7 @@ Digital vending machine that allows users to insert money, choose items, and ret
 
 # Overview
 
-Vending Machine Home Page. Enter money amount, click the button of desired item, recieve change.
+Vending Machine Home Page. Enter money amount, click the button of desired item, recieve change with item. Updates inventory.
 
 ![alt tag](https://github.com/sarahboka/vending-machine-webapp/blob/master/images/vendHome.png)
 
@@ -11,11 +11,11 @@ Statistics page shows the inventory amount of each item from the database in the
 
 ![alt tag](https://github.com/sarahboka/vending-machine-webapp/blob/master/images/vendStats.png)
 
-Setting icon is in top right of nav bar. Must be logged in to make admin changes.
+Must be logged in to make admin changes.
 
 ![alt tag](https://github.com/sarahboka/vending-machine-webapp/blob/master/images/vendLogin.png)
 
-Admin page allows you to create, read, update, or delete items. It notifies you if you've entered incorrect data.
+Admin page allows you to create, read, update, or delete items. All fields are validated.
 
 ![alt tag](https://github.com/sarahboka/vending-machine-webapp/blob/master/images/vendAdminValidation.png)
 
