@@ -43,6 +43,13 @@ adApp.controller('adminController', ['$scope', '$log', '$http', '$sce', function
         $http.post('item', {name: $scope.itemName, cost: $scope.itemCost, inventory: $scope.itemInventory, image: imageString})
                 .then(function(response){
                     loadItems();
+                    $scope.itemName = null;
+                    $scope.itemCost = null;
+                    $scope.itemInventory = null;
+                    $scope.itemImage = null;
+                    $scope.imageHeight = null;
+                    $scope.imageWidth = null;
+                    $scope.myForm.$setUntouched();
         });
     };
     
