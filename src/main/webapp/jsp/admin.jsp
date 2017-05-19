@@ -23,11 +23,11 @@
         <div class="container">
             <%@include file="headerFragment.jsp" %>
             <div class="container">
-                <div class="row">
+                <div class="row" ng-controller="adminController">
                     <!--  display table-->
                     <div class="col-md-6">
                         <h2>Item List</h2>
-                        <table id="itemListTable" ng-controller="adminController" class="table table-hover">
+                        <table id="itemListTable" class="table table-hover">
                             <thead>
                                 <th width="40%">Name</th>
                                 <th width="15%">Cost</th>

@@ -38,7 +38,6 @@ adApp.controller('adminController', ['$scope', '$log', '$http', '$sce', function
         });
     };
     
-//    $scope.newItem = {name: '', cost: '', inventory: '', image: ''};
     $scope.addItem = function() {
         $log.log("hitting add button");
         $http.post('item', {name: $scope.itemName, cost: $scope.itemCost, inventory: $scope.itemInventory, image: $scope.itemImage})
