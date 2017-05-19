@@ -39,9 +39,10 @@
                     <div class="col-lg-6 col-md-6 col-sm-12">
                         
                         <!--<div id="itemRows"></div>-->
+                        <!--machine button layout-->
                         <div class="row clearfix">
                             <div ng-repeat="item in items">
-                                <div class="col-sm-3 item" ng-click="purchaseItem(item.id)"><button><strong>{{item.name}}</strong><br>\${{item.cost}}</button></div>
+                                <div class="col-sm-3 item" ng-click="purchaseItem(item.id)"><button><strong>{{item.name}}</strong><br>{{item.cost | currency}}</button></div>
                                 
                             </div>
                         </div>

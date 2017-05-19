@@ -1,5 +1,5 @@
 # vending-machine-webapp
-Digital vending machine that allows users to insert money, choose items, and returns change. It also has an admin page for CRUDing items.Uses Spring Core, MVC, and Security, MySQL,TDD, RESTful.
+Digital vending machine that allows users to insert money, choose items, and returns change. It also has an admin page for CRUDing items.Uses AngularJS, Spring, Security, MySQL, TDD, RESTful.
 
 # Overview
 
