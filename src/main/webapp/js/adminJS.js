@@ -39,10 +39,10 @@ adApp.controller('adminController', ['$scope', '$log', '$http', '$sce', function
     };
     
     $scope.addItem = function() {
-        $log.log("hitting add button");
-        $http.post('item', {name: $scope.itemName, cost: $scope.itemCost, inventory: $scope.itemInventory, image: $scope.itemImage})
+        var imageString = '<img src="' + $scope.itemImage + '" height="' + $scope.imageHeight + '" width="' + $scope.imageWidth + '"/>';
+        $http.post('item', {name: $scope.itemName, cost: $scope.itemCost, inventory: $scope.itemInventory, image: imageString})
                 .then(function(response){
-                    $log.log(response.data);
+                    loadItems();
         });
     };
     
