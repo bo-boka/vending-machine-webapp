@@ -12,7 +12,7 @@ mApp.controller('machineController', ['$scope', '$log', '$http', '$sce', functio
             });
     
     $scope.purchaseItem = function(id){
-        
+        $("#vendItem").hide();
         $http.get('item/' + id)
                 .then(function(response){
                     $scope.item = response.data;
@@ -20,17 +20,21 @@ mApp.controller('machineController', ['$scope', '$log', '$http', '$sce', functio
                     //getting change
                     var itemCost = $scope.item.cost;
                     var amount = $("#amount").val();
-                    $scope.sum = parseFloat(amount - itemCost);
-                    //showing item picture
-                    $scope.renderHtml = function (htmlCode) {
-                        return $sce.trustAsHtml(htmlCode);
-                    };
-//                    $scope.image = '<img src="http://fixmybrokenmac.co.uk/wp-content/uploads/2017/03/iphone-6GREY.png" height="300" width="260"/>';
-                    $("#vendItem").show();
-                    //updating inventory and item in database
-                    var itemInv = $scope.item.inventory - 1;
-                    $http.put('item/'+ id, {name : $scope.item.name, cost : $scope.item.cost, inventory : itemInv, image: $scope.item.image});
-                    
+                    if (itemCost <= amount) {
+                        $scope.sum = parseFloat(amount - itemCost);
+                        //showing item picture
+                        $scope.renderHtml = function (htmlCode) {
+                            return $sce.trustAsHtml(htmlCode);
+                        };
+                        $("#vendItem").show();
+                        //updating inventory and item in database
+                        var itemInv = $scope.item.inventory - 1;
+                        $http.put('item/'+ id, {name : $scope.item.name, cost : $scope.item.cost, inventory : itemInv, image: $scope.item.image});
+                        $("#amount").val('');
+                        amount = 0;
+                    } else {
+                        alert("You do not have enough money to purchase this item. \n Please insert more money.");
+                    }
                 });
     };
     
