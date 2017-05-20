@@ -37,12 +37,10 @@
                         <marquee scrollamount="15">ELECTROvend</marquee>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12">
-                        
-                        <!--<div id="itemRows"></div>-->
                         <!--machine button layout-->
                         <div class="row clearfix">
                             <div ng-repeat="item in items">
-                                <div ng-if="item.inventory > 0" class="col-sm-3 item" ng-click="purchaseItem(item.id)"><button><strong>{{item.name}}</strong><br>{{item.cost | currency}}</button></div>
+                                <div ng-if="item.inventory > 0" class="col-sm-3 item" ng-click="purchaseItem(item.id)"><button id="vendButton"><strong>{{item.name}}</strong><br>{{item.cost | currency}}</button></div>
                             </div>
                         </div>
                         

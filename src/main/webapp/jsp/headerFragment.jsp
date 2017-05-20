@@ -16,5 +16,8 @@
         <sec:authorize access="isFullyAuthenticated()">
             <div role="presentation" class="pull-right"><a href="${pageContext.request.contextPath}/j_spring_security_logout">Log Out</a></div> 
         </sec:authorize>
+        <sec:authorize access="!isFullyAuthenticated()">
+            <div role="presentation" class="pull-right"><a href="${pageContext.request.contextPath}/login">login</a></div>
+        </sec:authorize>
     </ul>    
 </div>
